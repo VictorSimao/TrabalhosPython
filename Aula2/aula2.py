@@ -1,0 +1,1 @@
+print('Teste\n'*2)
