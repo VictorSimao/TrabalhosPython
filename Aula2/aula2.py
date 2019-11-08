@@ -1,1 +1,1 @@
-print('Teste\n'*2)
+print('='*50,'\n'*4,'Teste','\n'*4,'='*50)
