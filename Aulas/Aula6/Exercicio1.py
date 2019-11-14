@@ -4,7 +4,7 @@
 # Imprima a lista
 
 alunos = []
-for i in alunos:
+for i in range(0,10):
     alunos.append(input('Digite o nome do aluno: '))
 
 print(alunos)
