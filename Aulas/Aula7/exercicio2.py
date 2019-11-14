@@ -10,9 +10,11 @@ for i in range(0,2):
     jogadores = {'Nome':'','Posicao':'','Numero':'','PernaBoa':''}
     jogadores['Nome']= input('Digite o nome: ')
     jogadores['Posicao']= input('Digite a posicao: ')
-    jogadores['Numero']= input('Digite o numero: ')
+    jogadores['Numero']= int(input('Digite o numero: '))
     jogadores['PernaBoa']= input('Perna boa: ')
     lista_jogadores.append(jogadores)
 
-for jogador in lista_jogadores:
-    print(f'{jogadores["Nome"]} - {jogador["Posicao"]} - {jogador["Numero"]} - {jogador["PernaBoa"]}')
+for jogadores in lista_jogadores:
+    print(f'{jogadores["Nome"]} - {jogadores["Posicao"]} - {jogadores["Numero"]} - {jogadores["PernaBoa"]}')
+
+
