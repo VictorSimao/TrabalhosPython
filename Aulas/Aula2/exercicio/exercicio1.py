@@ -4,3 +4,11 @@
 #--- Os dados devem ser impressos utilizando a funcao format()
 #--- Deve ser usado apenas uma vez a função print(), porem os dados devem ser apresentados um em cada linha
 #--- O salario deve ser de tipo flutuante e na impressão deve apesentar apenas duas casas após a vírgula
+
+nome=input('Digite o nome: ')
+sobrenome=input('Digite o sobrenome: ')
+cpf=input('Digite o CPF: ')
+rg=input('Digite o RG: ')
+salario=float(input('Digite o Salario: '))
+
+print(f'Nome {nome}\nSobrenome {sobrenome}\nCPF {cpf}\nRG {rg}\nSalario {salario:.2f}')

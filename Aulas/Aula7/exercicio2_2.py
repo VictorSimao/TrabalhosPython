@@ -1,3 +1,9 @@
+# Exercicio 2
+# Escreva um programa que leia os dados de 11 jogadores
+# Jogador: Nome, Posição, Numero, PernaBoa
+# Crie um dicionario para armazenar dos dados
+# Imprima todos os jogadores e seus dados
+
 time = []
 for i in range(0,2):
     jogadores={}
