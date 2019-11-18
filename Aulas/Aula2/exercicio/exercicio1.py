@@ -11,4 +11,7 @@ cpf=input('Digite o CPF: ')
 rg=input('Digite o RG: ')
 salario=float(input('Digite o Salario: '))
 
+print('\n'*100)
+
 print(f'Nome {nome}\nSobrenome {sobrenome}\nCPF {cpf}\nRG {rg}\nSalario {salario:.2f}')
+
