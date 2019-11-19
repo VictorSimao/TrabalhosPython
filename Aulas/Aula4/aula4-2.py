@@ -30,7 +30,7 @@ if lista_vazia:
 else:
     print('Lista Vazia')
 
-nome=''
+nome = ''
 
 if nome:
     print('Preenchida')
