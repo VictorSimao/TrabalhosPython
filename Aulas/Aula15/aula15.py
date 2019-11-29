@@ -12,7 +12,7 @@ def ler():
     for linha in arquivo:
         linha = linha.strip()
         lista_linha = linha.split(';')
-        pessoa = {'nome':lista_linha[0], 'sobrenome':lista_linha[1],'idade':lista_linha[2]}
+        pessoa = {'nome':lista_linha[0],'sobrenome':lista_linha[1],'idade':lista_linha[2]}
         lista.append(pessoa)
     arquivo.close()
     return lista
