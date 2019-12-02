@@ -1,0 +1,1 @@
+{'Codigo_Cliente': '00', 'CPF': '0000', 'Nome_Completo': 'Victor', 'Data_Nascimento': '19/07/1988', 'Estado': 'SC', 'Cidade': 'Blumenau', 'Endereco': 'rua xv de novembro, 2005 centro'};
