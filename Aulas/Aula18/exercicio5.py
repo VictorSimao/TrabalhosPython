@@ -12,6 +12,8 @@
 
 #Regra: Não pode usar a função range e no máximo 2 print()
 
+from metodos import posicao
+
 lista = [
           ['mamão','abacaxi','laranja','uva','pera','maçã','vergamota'],
           ['skol','kaiser','sol','schin','brahma','itaipava','bavaria'],
@@ -23,3 +25,7 @@ lista = [
           ['carro','moto','vespa','caminhão','sprinter','kombi','fusca'],
           ['calça','camisa','japona','jaqueta','camiseta','bone','regata']
         ]
+
+
+
+posicao(lista)
