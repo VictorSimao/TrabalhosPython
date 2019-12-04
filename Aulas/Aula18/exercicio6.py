@@ -42,10 +42,8 @@ def entrada():
         if lista_linha[0] == cod:
             if lista_linha[3] < '18':
                 print("Entrada Proibida!")
-                break
             else:
-                print(f'{lista_linha[1]} - R$ 15,00')
-                break  
+                print(f'{lista_linha[1]} - R$ 15,00')  
     arquivo.close()
 
     arquivo = open('Aulas/Aula18/lista_homem.txt','r')
@@ -54,16 +52,15 @@ def entrada():
         if lista_linha[0] == cod:
             if lista_linha[3] < '18':
                 print("Entrada Proibida!")
-                break
             else:
                 print(f'{lista_linha[1]} - R$ 35,00')
-                break
     arquivo.close()
     return cod
 
 convidados = dicionario()
+
 # separar_sexo()
-codigo = '1'
-while codigo > '0':
-    codigo = entrada()
+
+while True:
+    entrada()
     
