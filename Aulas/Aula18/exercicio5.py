@@ -12,8 +12,6 @@
 
 #Regra: Não pode usar a função range e no máximo 2 print()
 
-from metodos import posicao
-
 lista = [
           ['mamão','abacaxi','laranja','uva','pera','maçã','vergamota'],
           ['skol','kaiser','sol','schin','brahma','itaipava','bavaria'],
@@ -26,6 +24,9 @@ lista = [
           ['calça','camisa','japona','jaqueta','camiseta','bone','regata']
         ]
 
-
+def posicao(lista):
+  for linha in lista:
+    for indice, objeto in enumerate(linha):
+      print(f'############# Posição {indice} #################\n{objeto}')
 
 posicao(lista)
