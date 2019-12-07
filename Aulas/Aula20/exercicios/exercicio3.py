@@ -35,29 +35,29 @@ def consulta():
 
 def separar_menores():
     arquivo = open('Aulas/Aula20/exercicios/cadastro1.txt','r',encoding="utf8")
+    arquivo_menores = open('Aulas/Aula20/exercicios/menores_de_idade.txt','w')
     for linha in arquivo:
         linha = linha.strip()
         lista_linha = linha.split(';')
         if lista_linha[2] < '20':
-            arquivo = open('Aulas/Aula20/exercicios/menores_de_idade.txt','a')
-            arquivo.write(f"{lista_linha}\n")
-            arquivo.close()
+            arquivo_menores.write(f"{lista_linha}\n")
+    arquivo_menores.close()
     arquivo.close()
 
 
 def separar_feminino():
     arquivo = open('Aulas/Aula20/exercicios/cadastro1.txt','r',encoding="utf8")
+    arquivo_feminino = open('Aulas/Aula20/exercicios/feminino.txt','w')
     for linha in arquivo:
         linha = linha.strip()
         lista_linha = linha.split(';')
         if lista_linha[3] == 'f':
-            arquivo = open('Aulas/Aula20/exercicios/feminino.txt','a')
-            arquivo.write(f"{lista_linha}\n")
-            arquivo.close()
+            arquivo_feminino.write(f"{lista_linha}\n")
+    arquivo_feminino.close()
     arquivo.close()
 
-# separar_menores()
-# separar_feminino()
+separar_menores()
+separar_feminino()
 while True:
     sair = consulta()
     if sair == 's':

@@ -2,7 +2,7 @@
 
 # Com a seguinte tupla:
 
-(('codigo','nome','idade','sexo','email','telefone'),
+clientes = (('codigo','nome','idade','sexo','email','telefone'),
  ('1', 'Francini', '32', 'm', 'fjvwys@click21.com.br', '026957242380'),
  ('2', 'Pia', '18', 'f', 'lidiagatinha15@yahoo.com.br', '031937463495'), 
  ('3', 'Vanessa', '40', 'm', 'fenix-ikki@bol.com.br', '038931353619'), 
@@ -37,3 +37,38 @@
 
 # Na opção sair, deve-se salvar tudo em um arquivo.txt a fim de guardar 
 # os registros.
+
+
+menu = '''
+#####################################
+Menu Interativo - Cadastro de Cliente
+
+1 - Cadastrar Clientes
+2 - Consultar Clientes
+3 - Sair
+
+Digite a opção desejada:
+'''
+
+
+while True:
+    cod = input(menu)
+    if cod == '1':
+        codigo = str(len(clientes)+1)
+        nome = input('Digite o nome: ')
+        idade = input('Digite a idade: ')
+        genero = input('m para masculino e f para feminino: ')
+        email = input('Digite o email: ')
+        telefone = input ('Digite o telefone: ')
+        clientes += ((codigo, nome, idade, genero, email, telefone),)
+    elif cod == '2':
+        for linha in clientes:
+            print(linha)
+    elif cod == '3':
+        arquivo = open('Aulas/Aula20/exercicios/arquivo.txt','w')
+        for linha in clientes:
+            arquivo.write(f'{linha[0]};{linha[1]};{linha[2]};{linha[3]};{linha[4]};{linha[5]}\n')
+        arquivo.close
+        break
+
+            

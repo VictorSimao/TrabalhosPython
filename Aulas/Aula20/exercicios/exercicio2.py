@@ -36,7 +36,7 @@ moeda = [{'Moeda(s)':1.00},{'Moeda(s)':0.50},{'Moeda(s)':0.25},
 preço = float(input('Digite o preço: '))
 valor = float(input(f'Preço {preço} reais. Digite o valor: '))
 
-troco = preço - valor
+troco = valor - preço
 
 dar_troco = []
 
