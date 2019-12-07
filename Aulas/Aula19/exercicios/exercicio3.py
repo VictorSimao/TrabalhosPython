@@ -25,3 +25,80 @@
 #      Lembre-se: É importante que apareça a frase. Pois a mesma será encaminhada por e-mail pela equipe de marketing
 
 
+def ler_cadastro():
+    arquivo = open('Aulas/Aula19/exercicios/cadastro.txt','r')
+    lista_dados = []
+    cabeçalho = ['codigo','nome','idade','sexo','e-mail','telefone']
+    for linha in arquivo:
+        linha = linha.strip()
+        lista_linha = linha.split(';')
+        dados = {}
+        i = 0
+        for linha in lista_linha:
+            dados[cabeçalho[i]] = linha
+            i += 1
+        lista_dados.append(dados)
+    return lista_dados
+
+def separar_menores():
+    for linha in resultado:
+        if linha['idade'] < '18':
+            arquivo = open('Aulas/Aula19/exercicios/menores_idade.txt','a')
+            arquivo.write(f'{linha}\n')
+            arquivo.close()
+        else:
+            arquivo = open('Aulas/Aula19/exercicios/maiores_idade.txt','a')
+            arquivo.write(f'{linha}\n')
+            arquivo.close()
+
+def separar_genero():
+    count_m = 0
+    count_f = 0
+    for linha in resultado:
+        if linha['sexo'] == 'f':
+            arquivo = open('Aulas/Aula19/exercicios/mulheres.txt','a')
+            arquivo.write(f'{linha}\n')
+            arquivo.close()
+            count_f += 1
+        else:
+            arquivo = open('Aulas/Aula19/exercicios/homens.txt','a')
+            arquivo.write(f'{linha}\n')
+            arquivo.close()
+            count_m += 1
+
+def clientes():
+    cod = input('Digite o codigo do cliente: ')
+    for linha in resultado:
+        if linha['codigo'] == cod:
+            if linha['sexo'] == 'f' and linha['idade'] < '16':
+                print(f'{linha}')
+                print(f'Ola {linha["nome"]}! Você quer aproveitar nosso Tikito sabor Gloss? É uma delicia!')
+                return
+            elif linha['sexo'] == 'f' and linha['idade'] > '16' and linha['idade'] <= '18':
+                print(f'{linha}')
+                print(f'Olá {linha["nome"]}! Quer experimentar nosso refigerante sabor alegria! O seu cruch vai adorar!')
+                return
+            elif linha['sexo'] == 'f' and linha['idade'] > '18':
+                print(f'{linha}')
+                print(f'Olá {linha["nome"]}! Já experimentou nossa bebida a base de tequila? Baixo tero alcoolico com o dobro de sabor!!!')
+                return
+            elif linha['sexo'] == 'm' and linha['idade'] < '16':
+                print(f'{linha}')
+                print(f'Ola {linha["nome"]}! Você quer aproveitar nosso Tikito sabor Meleka? É uma delicia!')
+                return
+            elif linha['sexo'] == 'm' and linha['idade'] > '16' and linha['idade'] <= '18':
+                print(f'{linha}')
+                print(f'Olá {linha["nome"]}! Quer experimentar nosso refigerante sabor Corriga de carros! A sua amada vai adorar!')
+                return
+            elif linha['sexo'] == 'm' and linha['idade'] > '18':
+                print(f'{linha}')
+                print(f'Olá {linha["nome"]}! Já experimentou nossa cerveja? alto teor alcoolico com o dobro do amargor!!!')
+                return
+    print(f'Codigo {cod}. Não Cadastrado!')
+            
+
+
+resultado = ler_cadastro()
+
+while True:
+    clientes()

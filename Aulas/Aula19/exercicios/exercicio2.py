@@ -20,7 +20,7 @@ pess   = [  ['Alex'   ,'Paulo'  ,'Pedro'  ,'Mateus' ,'Carlos' ,'João'   ,'Joaqu
 # (usando o f-string)
 
 lista_cadastro = []
-for i in range(len(pess)):
+for i in range(len(pess[1])):
         if pess[3][i] > '17':
                 cadastro = {}
                 for cont in range(len(cab)):
@@ -29,3 +29,6 @@ for i in range(len(pess)):
 
 for linha in lista_cadastro:
         print(linha)
+
+for linha in lista_cadastro:
+        print(f"Nome: {linha['nome']} Telefone: {linha['telefone']} Email: {linha['email']} Idade: {linha['idade']}")
