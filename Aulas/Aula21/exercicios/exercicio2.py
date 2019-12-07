@@ -41,4 +41,4 @@ try:
 
     print(a)
 except:
-    print('Valor Invalido!')
+    print('Erro! Digite numero inteiro!')

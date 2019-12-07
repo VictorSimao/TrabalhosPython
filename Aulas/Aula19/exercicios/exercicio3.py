@@ -41,30 +41,30 @@ def ler_cadastro():
     return lista_dados
 
 def separar_menores():
+    arquivo_menores = open('Aulas/Aula19/exercicios/menores_idade.txt','w')
+    arquivo_maiores = open('Aulas/Aula19/exercicios/maiores_idade.txt','w')
     for linha in resultado:
         if linha['idade'] < '18':
-            arquivo = open('Aulas/Aula19/exercicios/menores_idade.txt','a')
-            arquivo.write(f'{linha}\n')
-            arquivo.close()
+            arquivo_menores.write(f'{linha}\n')
         else:
-            arquivo = open('Aulas/Aula19/exercicios/maiores_idade.txt','a')
-            arquivo.write(f'{linha}\n')
-            arquivo.close()
+            arquivo_maiores.write(f'{linha}\n')
+    arquivo_maiores.close()
+    arquivo_menores.close()
 
 def separar_genero():
+    arquivo_mulheres = open('Aulas/Aula19/exercicios/mulheres.txt','w')
+    arquivo_homens = open('Aulas/Aula19/exercicios/homens.txt','a')
     count_m = 0
     count_f = 0
     for linha in resultado:
         if linha['sexo'] == 'f':
-            arquivo = open('Aulas/Aula19/exercicios/mulheres.txt','a')
-            arquivo.write(f'{linha}\n')
-            arquivo.close()
+            arquivo_mulheres.write(f'{linha}\n')
             count_f += 1
         else:
-            arquivo = open('Aulas/Aula19/exercicios/homens.txt','a')
-            arquivo.write(f'{linha}\n')
-            arquivo.close()
+            arquivo_homens.write(f'{linha}\n')
             count_m += 1
+    arquivo_mulheres.close()
+    arquivo_homens.close()
 
 def clientes():
     cod = input('Digite o codigo do cliente: ')
@@ -97,8 +97,9 @@ def clientes():
     print(f'Codigo {cod}. Não Cadastrado!')
             
 
-
 resultado = ler_cadastro()
 
+separar_genero()
+separar_menores()
 while True:
     clientes()
