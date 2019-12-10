@@ -38,20 +38,22 @@ class Cliente():
         self.saldo = 100.0
     
     def ver_saldo(self):
+        print('########################')
         print(f'Seu saldo é R$ {self.saldo}')
+        if self.saldo == 0:
+            print('########################')
+            print('Adicionar saldo!!!')
 
     def adicionar_saldo(self, valor):
         self.saldo += valor
-        ver_saldo()
-        if self.saldo == 0:
-            print('Adicionar Saldo!!!')
+        self.ver_saldo()
     
     def descontar_valor(self, ml, tipo):
-        if tipo == 0:
+        if tipo == 1:
             tipo = 0.01
-        elif tipo == 1:
-            tipo = 0.05
         elif tipo == 2:
+            tipo = 0.05
+        elif tipo == 3:
             tipo = 0.063
 
         valor = ml * tipo
@@ -61,18 +63,31 @@ class Cliente():
             ml = self.saldo/tipo
             valor = ml * tipo
             self.saldo -= valor
+        self.ver_saldo()
         print(f'Liberou {ml} ml!')
 
 p = Cliente('Victor',31,'4799998888')
 
 while True:
+    print('########################')
     print(f'Cliente {p.nome}')
-    p.ver_saldo()
-    print('Qual você quer comprar')
-    print('1 - Refrigerante, Valor 0.01/ml')
-    print('2 - Cerveja IPA, Valor 0.05/ml')
-    print('3 - Cerveja ALE, Valor 0.063/ml')
-    tipo = int(input('Digite o numero da opção que deseja: '))
-    ml = int(input('Quantos mls quer comprar:  '))
-
-    p.descontar_valor(ml, tipo)
+    print('########################')
+    print('1 - Ver saldo!')
+    print('2 - Aumentar saldo!')
+    print('3 - Comprar bebida!')
+    menu = int(input('Qual opção: '))
+    if menu == 1:
+        p.ver_saldo()
+    elif menu == 2:
+        print('########################')
+        valor = float(input('Adicionar: '))
+        p.adicionar_saldo(valor)
+    elif menu == 3:
+        print('########################')
+        print('Qual você quer comprar')
+        print('1 - Refrigerante, Valor 0.01/ml')
+        print('2 - Cerveja IPA, Valor 0.05/ml')
+        print('3 - Cerveja ALE, Valor 0.063/ml')
+        tipo = int(input('Qual opção: '))
+        ml = int(input('Quantos mls:  '))
+        p.descontar_valor(ml, tipo)
