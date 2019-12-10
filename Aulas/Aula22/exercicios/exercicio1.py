@@ -25,7 +25,7 @@ class Cliente:
     
     def comprar(self, dinheiro):
         self.bens += dinheiro
-        self.carteira = self. carteira - dinheiro
+        self.carteira -= dinheiro
         if self.carteira < 0:
             self.divida = (self.divida - self.carteira)*1
             self.carteira = 0
@@ -41,9 +41,10 @@ class Cliente:
             print('Não tem divida!')
 
 p = Cliente(1,'12345678900','Victor',31,'m')
+print(type(cliente))
 
 p.receber_salario(1000)
-print('Recebeu 1000 reais')
+print('Recebeu 1000 reais de salario')
 p.comprar(1200)
 print('Comprou 1200 reais de bens')
 
