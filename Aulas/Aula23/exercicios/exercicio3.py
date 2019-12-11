@@ -48,7 +48,7 @@ class Cadastro():
         arquivo = open('Aulas/Aula23/exercicios/cadastro_atualizado.txt','w')
         for linha in self.lista_cadastro:
             arquivo.write(f"{linha['codigo']};{linha['nome']};{linha['idade']};{linha['sexo']};{linha['email']};{linha['telefone']}\n")
-        arquivo.close
+        arquivo.close()
 
     def cadastrar_cliente(self,nome,idade,sexo,email,telefone):
         # 3) crie um metodo para cadastrar novos clientes. O código cliente é unico por pessoa, sendo assim não pode se repetir.
