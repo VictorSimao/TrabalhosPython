@@ -19,12 +19,12 @@ dadobruto = '1;Arnaldo;23;m;alexcabeludo2@hotmail.com;014908648117'
 class Cliente():
     def __init__(self,dadobruto):
         self.dado_bruto = dadobruto
-        # self.codigo = None
-        # self.nome = None
-        # self.idade = None
-        # self.genero = None
-        # self.email = None
-        # self.telefone = None
+        self.codigo = None
+        self.nome = None
+        self.idade = None
+        self.genero = None
+        self.email = None
+        self.telefone = None
 
     def entrada_valor(self):
         lista_dado = self.dado_bruto.split(';')
@@ -38,7 +38,7 @@ class Cliente():
 p = Cliente(dadobruto)
 p.entrada_valor()
 
-# print(f'Dado bruto: {p}')
+print(f'Dado bruto: {p.dado_bruto}')
 print(f'Codigo: {p.codigo}')
 print(f'Nome {p.nome}')
 print(f'Idade {p.idade}')
