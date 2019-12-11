@@ -47,7 +47,7 @@ class Cadastro():
         # 2) crie o metodo salvar os dados dos clientes em um arquivo txt.
         arquivo = open('Aulas/Aula23/exercicios/cadastro_atualizado.txt','w')
         for linha in self.lista_cadastro:
-            arquivo.write(f"{linha['codigo']};{linha['nome']};{linha['idade']};{linha['sexo']};{linha['email']};{linha['telefone']}")
+            arquivo.write(f"{linha['codigo']};{linha['nome']};{linha['idade']};{linha['sexo']};{linha['email']};{linha['telefone']}\n")
         arquivo.close
 
     def cadastrar_cliente(self,nome,idade,sexo,email,telefone):
@@ -61,14 +61,15 @@ class Cadastro():
             'telefone':telefone
             }
         self.lista_cadastro.append(dict_cadastro)
+        self.salvar()
     
     def consulta_cliente(self, cod):
         # 3) Crie um metodo de consulta de cliente, mostrando os dados dele na tela.
         for linha in self.lista_cadastro:
-            if cod == linha[0]:
+            if cod == linha['codigo']:
                 print(linha)
     
-    def atualizar_cadastro(self):
+    def atualizar_cadastro(self, cod):
         # 4) Crie um metodo para atualizar o cadastro de um cliente qualquer pelo codigo cliente. Após atualizar, salvar todos no arquivo "cadastro_atualizado.txt" (use o 'w' para sobrescrever o arquivo.)
         for linha in self.lista_cadastro:
             if cod == linha['codigo']:
@@ -79,6 +80,7 @@ class Cadastro():
                 linha['sexo']=input('Sexo: ')
                 linha['email']=input('Email: ')
                 linha['telefone']=input('Telefone: ')
+        self.salvar()
     
 
 
@@ -97,6 +99,5 @@ p.cadastrar_cliente(nome,idade,sexo,email,telefone)
 p.ver_lista_dict()
 
 cod = input('Codigo cliente: ')
-p.atualizar_cadastro()
-p.ver_lista_dict()
-
+p.atualizar_cadastro(cod)
+p.consulta_cliente(cod)
