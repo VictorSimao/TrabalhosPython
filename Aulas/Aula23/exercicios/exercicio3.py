@@ -68,6 +68,7 @@ class Cadastro():
         for linha in self.lista_cadastro:
             if cod == linha['codigo']:
                 print(linha)
+                
     
     def atualizar_cadastro(self, cod):
         # 4) Crie um metodo para atualizar o cadastro de um cliente qualquer pelo codigo cliente. Após atualizar, salvar todos no arquivo "cadastro_atualizado.txt" (use o 'w' para sobrescrever o arquivo.)
