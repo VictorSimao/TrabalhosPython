@@ -43,6 +43,10 @@ class Produto:
         Os dados que podem ser atualizados são: 
         nome, marca, preço de custo(float),preço de venda(float)
         '''
+        cod = input('Codigo Produto: ')
+        for produto in self.lista_produto:
+            if cod == produto[0]:
+                
         pass
 
     def atualizar_estoque(self):
