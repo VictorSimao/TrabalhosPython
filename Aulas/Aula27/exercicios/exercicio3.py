@@ -93,7 +93,7 @@ def cinco_nomes():
     lista_nomes = []
     for i in range(5):
         nome = randint(0,100)
-        lista_nomes.append(nome)
+        lista_nomes.append(str(nome))
 
     return lista_nomes
 nomes = cinco_nomes()
@@ -117,43 +117,95 @@ print(f'5) {nomes2}')
 
 lista_aninhada = [1,2,3,[4,5,[7,[9],8],6]]
 
+
 lista_aninhada_2 = lista_aninhada.copy()
+lista_aninhada_2[3] = lista_aninhada[3].copy()
+lista_aninhada_2[3][2] = lista_aninhada[3][2].copy()
+lista_aninhada_2[3][2][1] = lista_aninhada[3][2][1].copy()
 
 lista_aninhada[3][2][1].append(10)
-
 lista_aninhada_2[3][2].append('Aqui não pode ter o numero 10!')
 
 print(f'6) {lista_aninhada}')
 print(f'6) {lista_aninhada_2}')
+
 
 # 7) Continuando o exercicio, adicione a lista Nomes (exercicio 4) na lista_aninhada entre os números
 # 2 e o 3. Na lista_aninhada_2 adicione a "Pedro Pedroca" entre os números 4 e 5. 
 # Adicione na lista_aninhada, entre os números 1 e 2, a frase 'um, dois' e na lista_aninhada_2, 
 # entre os números 1 e 2 a frase 'Adiciono qualquer coisa em qualquer lugar nesta lista!'
 
+# lista_aninhada_2 [1, 2, 3, [4, 5, [7, [9], 8, 'Aqui não pode ter o numero 10!'], 6]]
+
+count = 2
+for i in nomes:
+    lista_aninhada.insert(count,i)
+    count += 1
+
+lista_aninhada_2[3].insert(1,'Pedro Pedroca')
+
+lista_aninhada.insert(1,'um, dois')
+
+lista_aninhada_2.insert(1,'Adiciono qualquer coisa em qualquer lugar nesta lista!')
+
+print(f'7) {lista_aninhada}')
+print(f'7) {lista_aninhada_2}')
 
 # 8) Com a lista1, ordene os números de maior para menor!
 
 lista1 = lista_simples_int(100)
+lista1.sort(reverse=True)
+
+print(f'8) {lista1}')
 
 
 # 9) Com a lista2, ordene os números de menor para maior!
 
 lista2 = lista_simples_int(100)
+lista2.sort()
+
+print(f'9) {lista2}')
 
 # 10) Usando o metodo, adicione a lista1 e lista2 (já ordenadas) na lista0.
 
 lista0 = []
+lista0.append(lista1)
+lista0.append(lista2)
+
+print(f'10) {lista0}')
 
 # 11) Ordene a lista0 e diga qual é o maior valor, menor valor e em quais das listas (lista1 ou lista2)
 # estes pertencem.
+
+
+if max(lista1) > max(lista2):
+    print(f'11) Lista1 tem o maior valor {max(lista1)}')
+elif max(lista2) > max(lista1):
+    print(f'11) Lista2 tem o maior valor {max(lista2)}')
+else:
+    print(f'Maior valor iguais na duas listas, {max(lista1)}')
 
 
 # 12) Com a lista_aninhada e lista_aninhada2, do exercicio 7, remova todas as alterações que nelas foram
 # colocadas. Salve os dados removidos em uma lista e imprima na tela cada item em uma linha
 # usando o f-string (use o .pop() )
 
+# lista_aninhada = [1,2,3,[4,5,[7,[9],8],6]]
+#                      2     3      4     5
+#  [1, 'um, dois', 2, '62', '55', '17', '17', '37', 'Pedro Paulada', 3, [4, 5, [7, [9, 10], 8], 6]]
+#  [1, 'Adiciono qualquer coisa em qualquer lugar nesta lista!', 2, 3, [4, 'Pedro Pedroca', 5, [7, [9], 8, 'Aqui não pode ter o numero 10!'], 6]]
 
+lista_removidos = []
+removidos = lista_aninhada.pop(1)
+lista_removidos.append(removidos)
+for i in range(6):
+    removidos = lista_aninhada.pop(2)
+    lista_removidos.append(removidos)
+removidos = lista_aninhada[3][2][1].pop(1)
+lista_removidos.append(removidos)
+
+print(f'12) {lista_removidos}')
+print(f'12) {lista_aninhada}')
 
 # 13) Remova, usando o .remove(), os seguintes itens destas listas:
 # 13.1) cpf da lista_cadastro
@@ -176,7 +228,21 @@ lista_cadastrados = ['1', '11111111111', 'João Carlos', '12/12/90',
 lista_cadastrados1 = ['2', '22222222222', 'Paulo Roberto', '23/01/89',
                   'SC', 'Blumenau', '99999', 'Velha', '7 de setembro', '55', '']
 
+lista_cadastro.remove('cpf')
+lista_cadastrados.remove('Camboriú')
+lista_cadastrados1.remove('Paulo Roberto')
+lista_cadastro.remove('rua')
+lista_cadastrados.remove('8833')
+lista_cadastrados1.remove('Velha')
+lista_cadastrados.remove('João Carlos')
+lista_cadastrados.remove('11111111111')
+lista_cadastro.remove('cidade')
+lista_cadastro.remove('data_de_nascimento')
 
+
+print(f'13) {lista_cadastro}')
+print(f'13) {lista_cadastrados}')
+print(f'13) {lista_cadastrados1}')
 
 # 14) Com a lista_fusao mostre com f-strig e o metodo .index() a posição dos seguintes elementos:
 # 14.1) cidade
