@@ -244,7 +244,7 @@ print(f'13) {lista_cadastro}')
 print(f'13) {lista_cadastrados}')
 print(f'13) {lista_cadastrados1}')
 
-# 14) Com a lista_fusao mostre com f-strig e o metodo .index() a posição dos seguintes elementos:
+# 14) Com a lista_fusao mostre com f-string e o metodo .index() a posição dos seguintes elementos:
 # 14.1) cidade
 # 14.2) João Carlos
 # 14.3) Camboriú
@@ -262,6 +262,27 @@ lista_fusao = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
                   '2', '22222222222', 'Paulo Roberto', '23/01/89',
                   'SC', 'Blumenau', '99999', 'Velha', '7 de setembro', '55', '']
 
+index_1 = lista_fusao.index('cidade')
+index_2 = lista_fusao.index('João Carlos')
+index_3 = lista_fusao.index('Camboriú')
+index_4 = lista_fusao.index('12/12/90')
+index_5 = lista_fusao.index('99999')
+index_6 = lista_fusao.index('nome_completo')
+index_7 = lista_fusao.index('22222222222')
+index_8 = lista_fusao.index('Tabuleiro')
+index_9 = lista_fusao.index('numero')
+
+print(f'14.1) {index_1}')
+print(f'14.2) {index_2}')
+print(f'14.3) {index_3}')
+print(f'14.4) {index_4}')
+print(f'14.5) {index_5}')
+print(f'14.6) {index_6}')
+print(f'14.7) {index_7}')
+print(f'14.8) {index_8}')
+print(f'14.9) {index_9}')
+
+
 
 # 15) Usando o metodo .index(), Crie uma função que localize a posição dos seguintes nomes: 
 # Germana, Deoclides, Zacarias, Karyne, Helio, Silvain, Aida Santos
@@ -278,6 +299,16 @@ lista_fusao = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
 
 
 lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'], ['2', 'Haroldo', '44', 'f', 'baratarebelde@gmail.com', '050923172729'], ['3', 'Pilar', '50', 'm', 'wanderson10sp@gmail.com', '018937341049'], ['4', 'Suzete Salvador', '45', 'f', 'eladiomp2@yahoo.com.br', '056928409823'], ['5', 'Riane', '37', 'f', 'orkutzimpower@terra.com.br', '018916004377'], ['6', 'Waldir', '34', 'f', 'nandah.s2@bol.com.br', '058903756441'], ['7', 'Lilian', '22', 'f', 'arydoido@gmail.com', '031958621596'], ['8', 'Matilde', '20', 'm', 'eu_kaka_@hotmail.com', '012941959390'], ['9', 'Samanta', '19', 'm', 'carro.tuning@yahoo.com.br', '028964480437'], ['10', 'Margarida', '30', 'm', 'paraaconta.08@hotmail.com', '047903547580'], ['11', 'Evelyn', '31', 'm', 'joaosilvaticudo@gmail.com', '053958638386'], ['12', 'Alessio', '29', 'm', 'w.nill02@gmail.com', '033961294774'], ['13', 'Yolanda', '25', 'm', 'patty_karen2005@hotmail.com', '027903312626'], ['14', 'Germana', '33', 'f', 'jarlinhatopdelinhagv@hotmail.com', '053964603415'], ['15', 'Helio', '33', 'f', 'juh.slim@gmail.com', '046997316461'], ['16', 'Liége', '21', 'f', 'gledsonlds@hotmail.com', '056992948431'], ['17', 'Yan', '42', 'm', 'lucapratto@yahoo.com.br', '016963562866'], ['18', 'Silvain', '50', 'f', 'hie.s2@hotmail.com', '021963399433'], ['19', 'Brian', '33', 'f', 'juliagabrielle06@hotmail.com', '027962676732'], ['20', 'Deoclides', '40', 'f', 'patriciamascena@gmail.com', '012961047979'], ['21', 'Jaqueline', '32', 'm', 'aninha183@hotmail.com', '014958997782'], ['22', 'Rosamaria', '45', 'f', 'j_leosao@hotmail.com', '026944672627'], ['23', 'Carla', '42', 'm', 'jhasdfjo@hotmail.com', '046976625208'], ['24', 'Aida Santos', '30', 'f', 'nayara.cristinap@hotmail.com', '034920819199'], ['25', 'Thomas', '19', 'm', 'jfdslinda@bol.com.br', '030974027667'], ['26', 'Naiara', '23', 'm', 'darknees_666@ig.com.br', '018976696717'], ['27', 'Karyne', '17', 'm', 'garotosonhador_1@hotmail.com', '054984689319'], ['28', 'Alenis Dias', '43', 'f', 'vi_vi_cristinaf@hotmail.com', '034980886309'], ['29', 'Grace', '38', 'm', 'amandakell@uol.com.br', '041932906720'], ['30', 'Zacarias', '31', 'm', 'loca.som@hotmail.com', '041926007066']]
+
+def localize(lista, nome):
+    for i in range(0, len(lista)):
+        if lista[i][1] == nome:
+            return i
+    
+
+    
+x = localize(lista_cadastros,'Alenis Dias')
+print(f'15) lista_cadastros[{x}][1]')
 
 
 # 16) Conte na lista1 a quantidade dos seguintes valores (use o f-string):
