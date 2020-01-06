@@ -141,3 +141,23 @@ listar_aviao(aviao)
 print('\nFortwo volta para o terminal com: ')
 
 listar_carro(smart)
+
+print('#'*55, '\nVIAGEM 7\n', '#'*55, sep='')
+print('\nEmbarcam no Fortwo: ')
+smart.append('Chefe de Serviço')
+terminal.pop()
+listar_carro(smart)
+
+print('\nTerminal: ')
+listar_terminal(terminal)
+
+print('\nFortwo chega ao avião.')
+
+print(f'\nEmbarcam no avião: Piloto e Chefe de Serviço')
+aviao.append('Piloto')
+aviao.append('Chefe de Serviço')
+smart.pop(0)
+smart.pop(0)
+
+print('\nPessoas no avião: ')
+listar_aviao(aviao)
