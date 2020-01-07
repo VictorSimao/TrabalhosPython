@@ -37,7 +37,7 @@ class airlines:
         exclue.pop(0)
     
     def abrir(self):
-        arquivo = open('Aula29/pessoas.txt', 'r')
+        arquivo = open('Aulas/Aula29/pessoas.txt', 'r')
         lista = []
         for pessoa in arquivo:
             pessoa = pessoa.strip()
@@ -46,7 +46,7 @@ class airlines:
         return lista
 
     def gravar(self, aviao):
-        arquivo = open('Aula29/aviao.txt', 'w')
+        arquivo = open('Aulas/Aula29/aviao.txt', 'w')
         for pessoa in aviao:
             arquivo.write(f'{pessoa}\n')
         arquivo.close()
