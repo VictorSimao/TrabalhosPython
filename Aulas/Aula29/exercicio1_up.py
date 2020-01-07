@@ -1,7 +1,7 @@
 from Air import airlines
 air = airlines()
 
-terminal = ['piloto','oficial_1','oficial_2','chefe','comissario_1','comissario_2','policial','prisioneiro']
+terminal = air.abrir()
 carro = []
 aviao = [] 
 
@@ -42,3 +42,4 @@ while not not terminal:
         print('\n########## AVIAO ##########')
         air.listar_aviao(aviao)
         print('\nEMBARQUE FINALIZADO!')
+        air.gravar(aviao)

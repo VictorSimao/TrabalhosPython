@@ -3,7 +3,6 @@ class airlines:
     Classe que possibilita listar as pessoas em cada
     lugar (carro, avião e terminal) e transferi-los.
     '''
-
     def listar_terminal(self, terminal):
         '''
         Lista todas as pessoas que estão no terminal.
@@ -36,3 +35,18 @@ class airlines:
         '''
         recebe.append(exclue[0])
         exclue.pop(0)
+    
+    def abrir(self):
+        arquivo = open('Aula29/pessoas.txt', 'r')
+        lista = []
+        for pessoa in arquivo:
+            pessoa = pessoa.strip()
+            lista.append(pessoa)
+        arquivo.close()
+        return lista
+
+    def gravar(self, aviao):
+        arquivo = open('Aula29/aviao.txt', 'w')
+        for pessoa in aviao:
+            arquivo.write(f'{pessoa}\n')
+        arquivo.close()
