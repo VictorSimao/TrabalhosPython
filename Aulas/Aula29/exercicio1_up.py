@@ -1,11 +1,15 @@
 from Air import airlines
+from time import sleep
+from termcolor import colored
 air = airlines()
 
 terminal = air.abrir()
 carro = []
 aviao = [] 
+cont = 1
 
 while not not terminal:
+    print(colored(f'\n########## VIAGEM {cont} #########', 'green'))
     print('\n########## TERMINAL #########')
     air.listar_terminal(terminal)
     air.listar_carro(carro)
@@ -35,11 +39,14 @@ while not not terminal:
     if not not terminal:
         print('\n########## INDO PARA O TERMINAL ##########')
         print(f'Dirigindo: {carro[0]}')
+        sleep(2)
     else:
-        print(f'\nPor último, {carro[0]} embarca no avião.')
+        print(colored(f'\nPor último, {carro[0]} embarca no avião.', 'green'))
         aviao.append(carro[-1])
         carro.clear()
+        sleep(2)
         print('\n########## AVIAO ##########')
         air.listar_aviao(aviao)
-        print('\nEMBARQUE FINALIZADO!')
+        print(colored('\nEMBARQUE FINALIZADO!', 'red'))
         air.gravar(aviao)
+    cont += 1
