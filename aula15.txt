@@ -1,3 +1,0 @@
-skol;pilsen;4.9
-Skol;Pilse;20.8
-Bud;Malte;89.9
