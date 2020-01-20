@@ -1,0 +1,9 @@
+1;Espada;10;0;0
+2;Espada Longa;15;0;0
+3;Machado;10;0;0
+4;Machadão;15;0;0
+5;Adaga;10;0;0
+6;Armadura de Couro;0;0;10
+7;Armadura de Placa;0;0;15
+8;Escudo de Madeira;0;10;0
+9;Escudo de Placa;0;15;0
