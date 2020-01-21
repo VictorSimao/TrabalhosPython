@@ -6,7 +6,7 @@ class HeroiDb:
 
     def exibir(self):
         x = Heroi()
-        with open('C:/Users/Familia Nande Simão/Documents/GitHub/TrabalhosPython/Estudo/GameArena/dao/heroi.txt','r') as arquivo:
+        with open('Estudo/GameArena/dao/heroi.txt','r') as arquivo:
             for linha in arquivo:
                 lista = linha.split(';')
             x.nome = lista[0]

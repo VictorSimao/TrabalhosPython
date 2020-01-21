@@ -5,7 +5,7 @@ class ItensDb:
 
     def craftar(self, id):
         x = Item()
-        with open('C:/Users/Familia Nande Simão/Documents/GitHub/TrabalhosPython/Estudo/GameArena/dao/itens.txt','r') as arquivo:
+        with open('Estudo/GameArena/dao/itens.txt','r') as arquivo:
             for linha in arquivo:
                 linha = linha.strip()
                 lista = linha.split(';')

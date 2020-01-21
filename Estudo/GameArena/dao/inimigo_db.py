@@ -5,7 +5,7 @@ class InimigoDb:
 
     def invocar(self, id):
         x = Inimigo()
-        with open('C:/Users/Familia Nande Simão/Documents/GitHub/TrabalhosPython/Estudo/GameArena/dao/inimigos.txt','r') as arquivo:
+        with open('Estudo/GameArena/dao/inimigos.txt','r') as arquivo:
             for linha in arquivo:
                 lista = linha.split(';')
                 x.id = int(lista[0])

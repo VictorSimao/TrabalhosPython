@@ -1,5 +1,5 @@
 import sys
-sys.path.append('C:/Users/Familia Nande Simão/Documents/GitHub/TrabalhosPython/Estudo/GameArena')
+sys.path.append('Estudo/GameArena')
 
 from time import sleep
 
