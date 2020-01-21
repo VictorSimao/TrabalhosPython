@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar Squads</title>
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvar" method="get">
+            <input type="hidden" name="id" id="id" value="{{squad.id}}"> <br/>
+            <div class="descricoes"> 
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{squad.nome}}"> <br/>
+            <div class="descricoes"> 
+                <label for="sobrenome">Descrição:</label>
+            </div>
+            <div class="descricoes"> 
+                <label for="idade">Numero Pessoas:</label>
+            </div>
+            <input type="text" name="numeropessoas" id="numeropessoas" value="{{squad.numeropessoas if squad.numeropessoas != 0 else ''}}"> <br/>
+            <div class="descricoes"> 
+                <label for="logradouro">Linguagem Back End:</label>
+            </div>
+            <input type="text" name="linguagembackend" id="linguagembackend" value="{{squad.linguagembackend}}"> <br/>
+            <div class="descricoes"> 
+                <label for="numero">Framework Front End:</label>
+            </div>
+            <input type="text" name="frameworkfrontend" id="frameworkfrontend" value="{{squad.frameworkfrontend}}"> <br/>
+            <div class="descricoes"> 
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrar" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>
