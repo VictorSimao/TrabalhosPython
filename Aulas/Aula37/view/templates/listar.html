@@ -32,8 +32,8 @@
                     <td>{{ p.linguagembackend }}</td>
                     <td>{{ p.frameworkfrontend }}</td>
                     <td>
-                        <a href="/editar?id={{ p[0] }}" class="editar">Editar</a>
-                        <a href="/excluir?id={{ p[0] }}" class="excluir">Excluir</a>
+                        <a href="/cadastrar?idsquad={{ p.idsquad }}" class="editar">Editar</a>
+                        <a href="/excluir?idsquad={{ p.idsquad }}" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

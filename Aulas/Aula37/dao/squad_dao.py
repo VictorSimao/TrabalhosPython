@@ -20,8 +20,8 @@ class SquadDao:
 
     def buscar_por_id(self, id):
         #----- Criação do comando SQL e passado para o cursor
-        comando_sql_select = f"SELECT * FROM SQUAD WHERE IDSQUAD= {id}"
-        self.cursor.execute(comando_sql_select)
+        comando = f"SELECT * FROM SQUAD WHERE IDSQUAD= {id}"
+        self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
 
@@ -40,7 +40,7 @@ class SquadDao:
             '{squad.descricao}',
             {squad.numeropessoas},
             '{squad.linguagembackend}',
-            '{sqaud.frameworkfrontend}
+            '{squad.frameworkfrontend}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -54,8 +54,8 @@ class SquadDao:
             DESCRICAO ='{squad.descricao}',
             NUMEROPESSOAS = {squad.numeropessoas},
             LINGUAGEMBACKEND = '{squad.linguagembackend}',
-            FRAMEWORKFRONTEND = '{squad.frameworkfrontend}
-        WHERE ID = {squad.idsquad}
+            FRAMEWORKFRONTEND = '{squad.frameworkfrontend}'
+        WHERE IDSQUAD = {squad.idsquad}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -64,19 +64,3 @@ class SquadDao:
         comando = f"DELETE FROM SQUAD WHERE IDSQUAD = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
-
-    def converter_tabela_classe(self, lista_tuplas):
-        #cria uma lista para armazenar os dicionarios
-        lista_squads = []
-        for p in lista_tuplas:
-            #----- Criação do objeto da classe pessoa
-            p1 = Squad()
-            #--- pega cada posição da tupla e atribui a uma chave do dicionário
-            p1.idsquad = p[0]
-            p1.nome = p[1]
-            p1.descricao= p[2]
-            p1.numeropessoas = p[3]
-            p1.linguagembackend = p[4]
-            p1.frameworkfrontend = p[5]
-            lista_squads.append(p1)
-        return lista_squads
