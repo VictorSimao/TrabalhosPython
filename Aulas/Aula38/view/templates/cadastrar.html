@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar Squads</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvar" method="get">
+            <input type="hidden" name="idsquad" id="idsquad" value="{{squad.idsquad}}"> <br/>
+            <div class="descricoes"> 
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{squad.nome}}"> <br/>
+            <div class="descricoes"> 
+                <label for="descricao">Descrição:</label>
+            </div>
+            <input type="text" name="descricao" id="descricao" value="{{squad.descricao}}"> <br/>
+            <div class="descricoes"> 
+                <label for="numeropessoas">Numero Pessoas:</label>
+            </div>
+            <input type="text" name="numeropessoas" id="numeropessoas" value="{{squad.numeropessoas if squad.numeropessoas != 0 else ''}}"> <br/>
+            <div class="descricoes"> 
+                <label for="logradouro">Linguagem Back End:</label>
+            </div>
+            <input type="text" name="linguagembackend" id="linguagembackend" value="{{squad.linguagembackend}}"> <br/>
+            <div class="descricoes"> 
+                <label for="text">Framework Front End:</label>
+            </div>
+            <input type="text" name="frameworkfrontend" id="frameworkfrontend" value="{{squad.frameworkfrontend}}"> <br/>
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrar" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>

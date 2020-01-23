@@ -12,7 +12,9 @@ class SquadDao:
 
     def listar_todos(self):
         #----- Criação do comando SQL e passado para o cursor
-        comando_sql_select = "SELECT * FROM SQUAD"
+        comando_sql_select = "SELECT * FROM SQUADS, BACKEND WHERE SQUADS.L_BACKEND_ID = BACKEND.ID"
+        # "SELECT * FROM SQUADS AS S LEFT JOIN BACKEND AS B ON S.L_BACKEND_ID = B.ID"
+        # SELECT * FROM 01_MDG_PESSOA AS P LEFT JOIN 01_MDG_ENDERECO AS E ON P.ENDERECO_ID = E.ID
         self.cursor.execute(comando_sql_select)
         #---- Pega todos os resultados da execução do comando SQL e armazena em uma variável
         resultado = self.cursor.fetchall()
@@ -20,13 +22,13 @@ class SquadDao:
 
     def buscar_por_id(self, id):
         #----- Criação do comando SQL e passado para o cursor
-        comando = f"SELECT * FROM SQUAD WHERE IDSQUAD= {id}"
+        comando = f"SELECT * FROM SQUADS WHERE IDS= {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
 
     def salvar(self, squad:Squad):
-        comando = f""" INSERT INTO SQUAD
+        comando = f""" INSERT INTO SQUADS
         (
             NOME,
             DESCRICAO,
@@ -48,19 +50,19 @@ class SquadDao:
         return id_inserido
     
     def alterar(self, squad:Squad):
-        comando = f""" UPDATE SQUAD
+        comando = f""" UPDATE SQUADS
         SET
             NOME = '{squad.nome}',
             DESCRICAO ='{squad.descricao}',
             NUMEROPESSOAS = {squad.numeropessoas},
             LINGUAGEMBACKEND = '{squad.linguagembackend}',
             FRAMEWORKFRONTEND = '{squad.frameworkfrontend}'
-        WHERE IDSQUAD = {squad.idsquad}
+        WHERE ID = {squad.idsquad}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
     
     def deletar(self, id):
-        comando = f"DELETE FROM SQUAD WHERE IDSQUAD = {id}"
+        comando = f"DELETE FROM SQUADS WHERE ID = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
