@@ -11,12 +11,11 @@ class SquadDao:
         self.cursor = self.conexao.cursor()
 
     def listar_todos(self):
-        #----- Criação do comando SQL e passado para o cursor
-        comando_sql_select = "SELECT * FROM SQUADS, BACKEND WHERE SQUADS.L_BACKEND_ID = BACKEND.ID"
-        # "SELECT * FROM SQUADS AS S LEFT JOIN BACKEND AS B ON S.L_BACKEND_ID = B.ID"
+        # "SELECT * FROM SQUADS S LEFT JOIN BACKEND AS B ON S.L_BACKEND_ID = B.ID"
         # SELECT * FROM 01_MDG_PESSOA AS P LEFT JOIN 01_MDG_ENDERECO AS E ON P.ENDERECO_ID = E.ID
+
+        comando_sql_select = "SELECT * FROM SQUADS"
         self.cursor.execute(comando_sql_select)
-        #---- Pega todos os resultados da execução do comando SQL e armazena em uma variável
         resultado = self.cursor.fetchall()
         return resultado
 
@@ -33,16 +32,12 @@ class SquadDao:
             NOME,
             DESCRICAO,
             NUMEROPESSOAS,
-            LINGUAGEMBACKEND,
-            FRAMEWORKFRONTEND
         )
         VALUES
         (
             '{squad.nome}',
             '{squad.descricao}',
             {squad.numeropessoas},
-            '{squad.linguagembackend}',
-            '{squad.frameworkfrontend}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -55,9 +50,7 @@ class SquadDao:
             NOME = '{squad.nome}',
             DESCRICAO ='{squad.descricao}',
             NUMEROPESSOAS = {squad.numeropessoas},
-            LINGUAGEMBACKEND = '{squad.linguagembackend}',
-            FRAMEWORKFRONTEND = '{squad.frameworkfrontend}'
-        WHERE ID = {squad.idsquad}
+        WHERE ID = {squad.id}
         """
         self.cursor.execute(comando)
         self.conexao.commit()

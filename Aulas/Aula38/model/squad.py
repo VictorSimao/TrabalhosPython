@@ -9,10 +9,10 @@ class Squad:
         self.nome = ''
         self.descricao= ''
         self.numeropessoas = 0
-        self.backend = BackEnd()
-        # self.frontend = FrontEnd()
-        # self.sgbd = Sgbd()
+        self.backend = []
+        self.frontend = []
+        self.sgbd = []
 
     def __str__(self):
-        return f'{self.id};{self.nome};{self.descricao};{self.numeropessoas};{self.backend}'
+        return f'{self.id};{self.nome};{self.descricao};{self.numeropessoas}'
 

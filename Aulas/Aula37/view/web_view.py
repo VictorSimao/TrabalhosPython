@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 import sys
-sys.path.append('C:/Users/900165/Documents/TrabalhosPython/Aulas/Aula37')
+sys.path.append('Aulas/Aula37')
 from controller.squad_controller import SquadController
 from model.squad import Squad
 

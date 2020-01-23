@@ -1,9 +1,5 @@
 # Estudos e teste com listas.
 
-lista = []
+tupla = (("apple", "banana", "cherry"),('python','c#'))
 
-lista.append('a')
-
-lista.sort()
-
-print(lista)
+print(len(tupla[0]))

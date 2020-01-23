@@ -18,6 +18,12 @@ class SgbdDao:
         resultado = self.cursor.fetchall()
         return resultado
 
+    def buscar_por_squad(self, id)
+        comando = f"SELECT SG.NOME FROM SGBD AS SG RIGHT JOIN RELACIONAMENTO AS R ON SG.ID = R.BACK_ID RIGHT JOIN SQUADS AS S ON R.SQUAD_ID = S.IDWHERE S.ID = {id};"
+        self.self.cursor.execute(comando)
+        resultado = self.cursor.fetchall()
+        return resultado
+
     def buscar_por_id(self, id):
         #----- Criação do comando SQL e passado para o cursor
         comando = f"SELECT * FROM SGBD WHERE ID= {id}"
