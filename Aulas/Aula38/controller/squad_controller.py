@@ -17,6 +17,9 @@ class SquadController:
     def __init__(self):
         self.squad_dao = SquadDao()
         self.backend_dao = BackEndDao()
+        self.frontend_dao = FrontEndDao()
+        self.sgbd_dao = SgbdDao()
+
         self.backend_controller = BackEndController()
         self.frontend_controller = FrontEndController()
         self.sgbd_controller = SgbdController()
@@ -30,20 +33,23 @@ class SquadController:
             s1.nome = s[1]
             s1.descricao= s[2]
             s1.numeropessoas = s[3]
-            lista_tuplas_backend = self.backend_dao.listar_todos(s1.id)
+            lista_tuplas_backend = self.backend_dao.buscar_por_squad(s1.id)
             i=0
             for b in range(len(lista_tuplas_backend)):
-                s1.backend.append(b[i])
+                if lista_tuplas_backend[i][0] != None:
+                    s1.backend.append(lista_tuplas_backend[i][0])
                 i+=1
-            lista_tuplas_frontend = self.frontend_dao.listar_todos(s1.id)
+            lista_tuplas_frontend = self.frontend_dao.buscar_por_squad(s1.id)
             i=0
             for f in range(len(lista_tuplas_frontend)):
-                s1.frontend.append(b[i])
+                if lista_tuplas_frontend[i][0] != None:
+                    s1.frontend.append(lista_tuplas_frontend[i][0])
                 i+=1
-            lista_tuplas_sgbd = self.sgbd_dao.listar_todos(s1.id)
+            lista_tuplas_sgbd = self.sgbd_dao.buscar_por_squad(s1.id)
             i=0
             for sg in range(len(lista_tuplas_sgbd)):
-                s1.sgbd.append(sg[1])
+                if lista_tuplas_sgbd[i][0] != None:
+                    s1.sgbd.append(lista_tuplas_sgbd[i][0])
                 i+=1
             lista_squads.append(s1)
         return lista_squads
@@ -74,15 +80,9 @@ class SquadController:
 
 
     def salvar(self, squad:Squad):
-        # squad.backend.id = self.backend_controller.salvar(squad)
-        # squad.frontend.id = self.frontend_controller.salvar(squad)
-        # squad.sgbd.id = self.sgbd_controller.salvar(salvar)
         return self.squad_dao.salvar(squad)
 
     def alterar(self, squad:Squad):
-        # self.backend_controller.alterar(squad)
-        # self.frontend_controller.alterar(squad)
-        # self.sgbd_controller.alterar(squad)
         self.squad_dao.alterar(squad)
 
     def deletar(self, id):

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 import sys
-sys.path.append('C:/Users/900165/Documents/TrabalhosPython/Aulas/Aula37')
+sys.path.append('Aulas/Aula38')
 from controller.squad_controller import SquadController
 from model.squad import Squad
 
@@ -21,20 +21,20 @@ def listar():
 @app.route('/cadastrar')
 def cadastrar():
     squad = Squad()
-    if 'idsquad' in request.args:
-        id = request.args['idsquad']
+    if 'id' in request.args:
+        id = request.args['id']
         squad = squad_controller.buscar_por_id(id)
     return render_template('cadastrar.html', titulo_app = nome, squad = squad )
 
 @app.route('/salvar')
 def salvar():
     squad = Squad()
-    squad.idsquad = int(request.args['idsquad'])
+    squad.idsquad = int(request.args['id'])
     squad.nome = request.args['nome']
     squad.descricao = request.args['descricao']
-    squad.numeropessoas = request.args['numeropessoas']
-    squad.linguagembackend = request.args['linguagembackend']
-    squad.frameworkfrontend = request.args['frameworkfrontend']
+    squad.numeropessoas = request.args['numpessoas']
+    squad.linguagembackend = request.args['backend']
+    squad.frameworkfrontend = request.args['frontend']
     
 
     if squad.idsquad == 0:
@@ -45,7 +45,7 @@ def salvar():
 
 @app.route('/excluir')
 def excluir():
-    id = int(request.args['idsquad'])
+    id = int(request.args['id'])
     squad_controller.deletar(id)
     return redirect('/listar')
 

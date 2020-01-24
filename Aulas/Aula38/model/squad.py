@@ -8,11 +8,11 @@ class Squad:
         self.id = 0
         self.nome = ''
         self.descricao= ''
-        self.numeropessoas = 0
+        self.numpessoas = 0
         self.backend = []
         self.frontend = []
         self.sgbd = []
 
     def __str__(self):
-        return f'{self.id};{self.nome};{self.descricao};{self.numeropessoas}'
+        return f'{self.id};{self.nome};{self.descricao};{self.numpessoas};{self.backend};{self.frontend};{self.sgbd}'
 

@@ -2,6 +2,7 @@
 import MySQLdb
 from model.backend import BackEnd
 
+
 class BackEndDao:
 
     def __init__(self):
@@ -18,9 +19,9 @@ class BackEndDao:
         resultado = self.cursor.fetchall()
         return resultado
 
-    def buscar_por_squad(self, id)
-        comando = f"SELECT B.NOME FROM BACKEND AS B RIGHT JOIN RELACIONAMENTO AS R ON B.ID = R.BACK_ID RIGHT JOIN SQUADS AS S ON R.SQUAD_ID = S.IDWHERE S.ID = {id};"
-        self.self.cursor.execute(comando)
+    def buscar_por_squad(self, id):
+        comando = f"SELECT B.NOME FROM BACKEND AS B RIGHT JOIN RELACIONAMENTO AS R ON B.ID = R.BACK_ID RIGHT JOIN SQUADS AS S ON R.SQUAD_ID = S.ID WHERE S.ID = {id}"
+        self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
 
