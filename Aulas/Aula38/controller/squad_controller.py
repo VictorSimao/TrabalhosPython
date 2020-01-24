@@ -74,15 +74,15 @@ class SquadController:
 
 
     def salvar(self, squad:Squad):
-        squad.backend.id = self.backend_controller.salvar(squad)
-        squad.frontend.id = self.frontend_controller.salvar(squad)
-        squad.sgbd.id = self.sgbd_controller.salvar(salvar)
+        # squad.backend.id = self.backend_controller.salvar(squad)
+        # squad.frontend.id = self.frontend_controller.salvar(squad)
+        # squad.sgbd.id = self.sgbd_controller.salvar(salvar)
         return self.squad_dao.salvar(squad)
 
     def alterar(self, squad:Squad):
-        self.backend_controller.alterar(squad)
-        self.frontend_controller.alterar(squad)
-        self.sgbd_controller.alterar(squad)
+        # self.backend_controller.alterar(squad)
+        # self.frontend_controller.alterar(squad)
+        # self.sgbd_controller.alterar(squad)
         self.squad_dao.alterar(squad)
 
     def deletar(self, id):
