@@ -32,7 +32,7 @@ class SquadController:
             s1.id = s[0]
             s1.nome = s[1]
             s1.descricao= s[2]
-            s1.numeropessoas = s[3]
+            s1.numpessoas = s[3]
             lista_tuplas_backend = self.backend_dao.buscar_por_squad(s1.id)
             i=0
             for b in range(len(lista_tuplas_backend)):
@@ -60,7 +60,7 @@ class SquadController:
         s1.id = s[0]
         s1.nome = s[1]
         s1.descricao= s[2]
-        s1.numeropessoas = s[3]
+        s1.numpessoas = s[3]
         lista_tuplas_backend = self.backend_dao.listar_todos(s1.id)
         i=0
         for b in range(len(lista_tuplas_backend)):

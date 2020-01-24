@@ -32,32 +32,21 @@ class FrontEndDao:
         return resultado
 
     def salvar(self, frontend: FrontEnd):
-        comando = f""" INSERT INTO BACKEND
-        (
-            NOME,
-            VERSAO
-        )
-        VALUES
-        (
-            '{frontend.nome}',
-            '{frontend.versao}',
-        )"""
+        comando = f" INSERT INTO FRONTEND (NOME, VERSAO)VALUES('{frontend.nome}','{frontend.versao}')"
         self.cursor.execute(comando)
         self.conexao.commit()
         id_inserido = self.cursor.lastrowid
         return id_inserido
     
     def alterar(self, frontend: FrontEnd):
-        comando = f""" UPDATE FRONTEND
-        SET
-            NOME = '{frontend.nome}',
-            VERSAO = '{frontend.versao}'
-        WHERE ID = {frontend.id}
-        """
+        comando = f" UPDATE FRONTEND SET NOME = '{frontend.nome}', VERSAO = '{frontend.versao}' WHERE ID = {frontend.id}"
         self.cursor.execute(comando)
         self.conexao.commit()
     
     def deletar(self, id):
+        comando4 = f"DELETE FROM RELACIONAMENTO WHERE FRONT_ID = {id}"
+        self.cursor.execute(comando4)
+        self.conexao.commit()
         comando = f"DELETE FROM FRONTEND WHERE ID = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()

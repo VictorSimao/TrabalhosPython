@@ -27,38 +27,27 @@ class BackEndDao:
 
     def buscar_por_id(self, id):
         #----- Criação do comando SQL e passado para o cursor
-        comando = f"SELECT * FROM BACKEND WHERE ID= {id}"
+        comando = f"SELECT * FROM BACKEND WHERE ID = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
 
     def salvar(self, backend: BackEnd):
-        comando = f""" INSERT INTO BACKEND
-        (
-            NOME,
-            VERSAO
-        )
-        VALUES
-        (
-            '{backend.nome}',
-            '{backend.versao}',
-        )"""
+        comando = f" INSERT INTO BACKEND(NOME,VERSAO)VALUES('{backend.nome}','{backend.versao}')"
         self.cursor.execute(comando)
         self.conexao.commit()
         id_inserido = self.cursor.lastrowid
         return id_inserido
     
     def alterar(self, backend: BackEnd):
-        comando = f""" UPDATE BACKEND
-        SET
-            NOME = '{backend.nome}',
-            VERSAO = '{backend.versao}'
-        WHERE ID = {backend.id}
-        """
+        comando = f" UPDATE BACKEND SET NOME = '{backend.nome}', VERSAO = '{backend.versao}' WHERE ID = {backend.id}"
         self.cursor.execute(comando)
         self.conexao.commit()
     
     def deletar(self, id):
+        comando4 = f"DELETE FROM RELACIONAMENTO WHERE BACK_ID = {id}"
+        self.cursor.execute(comando4)
+        self.conexao.commit()
         comando = f"DELETE FROM BACKEND WHERE ID = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()

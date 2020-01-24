@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar Front-End</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvarfront" method="get">
+            <input type="hidden" name="id" id="id" value="{{front.id}}"> <br/>
+            <div class="descricoes"> 
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{front.nome}}"> <br/>
+            <div class="descricoes"> 
+                <label for="versao">Versão:</label>
+            </div>
+            <input type="text" name="versao" id="versao" value="{{front.versao}}"> <br/>
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrarfront" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>

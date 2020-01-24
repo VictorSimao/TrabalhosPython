@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar Back-End</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvarback" method="get">
+            <input type="hidden" name="id" id="id" value="{{back.id}}"> <br/>
+            <div class="descricoes"> 
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{back.nome}}"> <br/>
+            <div class="descricoes"> 
+                <label for="versao">Versão:</label>
+            </div>
+            <input type="text" name="versao" id="versao" value="{{back.versao}}"> <br/>
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrarback" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>

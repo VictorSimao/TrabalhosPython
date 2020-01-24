@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{titulo_app}} - Listar Squads</title>
+    <title>{{titulo_app}} - Listar Front End</title>
     <link rel="stylesheet" href="../static/estilo.css">
 </head>
 <body>
     <div class="conteudo">
-        <a class='btn-cadastro' href="/cadastrar">Cadastrar</a>
+        <a class='btn-cadastro' href="/cadastrarfront">Cadastrar</a>
         <table id='tabela-pessoa'>
             <thead>
                 <tr>
-                    <th>Squad Id</th>
+                    <th>Frontend Id</th>
                     <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Numero Pessoas</th>
-                    <th>Linguagem</th>
-                    <th>Framework</th>
+                    <th>Versão</th>
                     <th></th>
                 </tr>
             </thead>
@@ -27,13 +24,10 @@
                 <tr>
                     <td>{{ p.id }}</td>
                     <td>{{ p.nome }}</td>
-                    <td>{{ p.descricao }}</td>
-                    <td>{{ p.numpessoas }}</td>
-                    <td>{{ p.backend }}</td>
-                    <td>{{ p.frontend }}</td>
+                    <td>{{ p.versao }}</td>
                     <td>
-                        <a href="/cadastrar?id={{ p.id }}" class="editar">Editar</a>
-                        <a href="/excluir?id={{ p.id }}" class="excluir">Excluir</a>
+                        <a href="/cadastrarfront?id={{ p.id }}" class="editar">Editar</a>
+                        <a href="/excluirfront?id={{ p.id }}" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

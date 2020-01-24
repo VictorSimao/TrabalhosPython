@@ -49,8 +49,8 @@ sgc = SgbdController()
 #     print(i)
 
 # ----------- Listar todas Linguagens Back End
-# for i in bc.listar_todos():
-#     print(i)
+for i in bc.listar_todos():
+    print(i)
 
 # ----------- Listar todos Framewoek Front End
 # for i in fc.listar_todos():

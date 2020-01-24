@@ -10,7 +10,7 @@
 <body>
     <div class="conteudo">
         <form action="/salvar" method="get">
-            <input type="hidden" name="idsquad" id="idsquad" value="{{squad.idsquad}}"> <br/>
+            <input type="hidden" name="id" id="id" value="{{squad.id}}"> <br/>
             <div class="descricoes"> 
                 <label for="nome">Nome:</label>
             </div>
@@ -20,17 +20,17 @@
             </div>
             <input type="text" name="descricao" id="descricao" value="{{squad.descricao}}"> <br/>
             <div class="descricoes"> 
-                <label for="numeropessoas">Numero Pessoas:</label>
+                <label for="numpessoas">Numero Pessoas:</label>
             </div>
-            <input type="text" name="numeropessoas" id="numeropessoas" value="{{squad.numeropessoas if squad.numeropessoas != 0 else ''}}"> <br/>
+            <input type="text" name="numpessoas" id="numpessoas" value="{{squad.numpessoas if squad.numpessoas != 0 else ''}}"> <br/>
             <div class="descricoes"> 
-                <label for="logradouro">Linguagem Back End:</label>
+                <label for="backend">Linguagem Back End:</label>
             </div>
-            <input type="text" name="linguagembackend" id="linguagembackend" value="{{squad.linguagembackend}}"> <br/>
+            <input type="text" name="backend" id="backend" value="{{squad.backend}}"> <br/>
             <div class="descricoes"> 
-                <label for="text">Framework Front End:</label>
+                <label for="frontend">Framework Front End:</label>
             </div>
-            <input type="text" name="frameworkfrontend" id="frameworkfrontend" value="{{squad.frameworkfrontend}}"> <br/>
+            <input type="text" name="frontend" id="frontend" value="{{squad.frontend}}"> <br/>
 
             <hr/>
             <input type="submit" value="Salvar" class="salvar">
