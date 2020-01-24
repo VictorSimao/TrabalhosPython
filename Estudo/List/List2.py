@@ -1,5 +1,6 @@
 # Estudos e teste com listas.
 
-tupla = (("apple", "banana", "cherry"),('python','c#'))
 
-print(len(tupla[0]))
+b = [1,0,0]
+for x in range(3):
+    print(b[x])
