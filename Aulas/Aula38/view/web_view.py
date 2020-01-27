@@ -50,14 +50,20 @@ def salvar():
     squad.descricao = request.args['descricao']
     squad.numpessoas = request.args['numpessoas']
     backend = request.args['backend0']
-    backend1 = request.args['backend1']
     if backend != '':
         squad.backend.append(backend)
+    backend1 = request.args['backend1']
     if backend1 != '':
         squad.backend.append(backend1)
-    squad.frontend.append(request.args['frontend0'])
-    squad.frontend.append(request.args['frontend1'])
-    squad.sgbd.append(request.args['sgbd'])
+    frontend = request.args['frontend0']
+    if frontend != '':
+        squad.frontend.append(request.args['frontend0'])
+    frontend1 = request.args['frontend1']
+    if frontend1 != '':
+        squad.frontend.append(request.args['frontend1'])
+    sgbd = request.args['sgbd']
+    if sgbd != '':
+        squad.sgbd.append(request.args['sgbd'])
 
     if squad.id == 0:
         squad_controller.salvar(squad)
