@@ -15,7 +15,7 @@ class SquadDao:
         return resultado
 
     def buscar_por_id(self, id):
-        comando = f"SELECT * FROM SQUADS WHERE IDS= {id}"
+        comando = f"SELECT * FROM SQUADS WHERE ID = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado

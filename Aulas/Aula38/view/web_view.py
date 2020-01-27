@@ -22,7 +22,7 @@ nome = 'Cadastros Squad'
 
 @app.route('/')
 def inicio():
-    return render_template('index.html', titulo_app = nome )
+    return render_template('homepage.html', titulo_app = nome )
 
 @app.route('/listar')
 def listar():
@@ -125,9 +125,36 @@ def excluirfront():
     frontend_controller.deletar(id)
     return redirect('/listarfront')
 
-@app.route('/listarsgbd')
+@app.route('/listarsgbds')
 def listarsgbd():
     sgbds = sgbd_controller.listar_todos()
     return render_template('listarsgbd.html', titulo_app = nome, lista = sgbds)
+
+@app.route('/cadastrarsgbd')
+def cadastrarsgbd():
+    sgbd = Sgbd()
+    if 'id' in request.args:
+        id = request.args['id']
+        sgbd = sgbd_controller.buscar_por_id(id)
+    return render_template('cadastrarsgbd.html', titulo_app = nome, sgbd = sgbd )
+
+@app.route('/salvarsgbd')
+def salvarsgbd():
+    sgbd = Sgbd()
+    sgbd.id = int(request.args['id'])
+    sgbd.nome = request.args['nome']
+    sgbd.versao = request.args['versao']
+    
+    if sgbd.id == 0:
+        sgbd_controller.salvar(sgbd)
+    else:
+        sgbd_controller.alterar(sgbd)
+    return redirect('/listarsgbds')
+
+@app.route('/excluirsgbd')
+def excluirsgbd():
+    id = int(request.args['id'])
+    sgbd_controller.deletar(id)
+    return redirect('/listarsgbds')
 
 app.run(debug=True)

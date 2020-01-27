@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{titulo_app}} - Listar Front End</title>
-    <link rel="stylesheet" href="../static/estilo.css">
+    <title>{{titulo_app}} - Listar</title>
+    <link rel="stylesheet" href="../static/listar.css">
 </head>
-<body>
+<body> 
     <div class="conteudo">
-        <a class='btn-cadastro' href="/cadastrarfront">Cadastrar</a>
-        <table id='tabela-pessoa'>
+        <a class='cadastro' href="/cadastrarfront">Cadastrar</a>
+        <table id='tabela-front'>
             <thead>
-                <tr>
-                    <th>Frontend Id</th>
+                <tr> 
+                    <th>FrontId</th>
                     <th>Nome</th>
                     <th>Versão</th>
                     <th></th>
@@ -26,8 +26,8 @@
                     <td>{{ p.nome }}</td>
                     <td>{{ p.versao }}</td>
                     <td>
-                        <a href="/cadastrarfront?id={{ p.id }}" class="editar">Editar</a>
-                        <a href="/excluirfront?id={{ p.id }}" class="excluir">Excluir</a>
+                        <a href="/cadastrarfront?id={{ p.id }}" class="editar btn">Editar</a>
+                        <a href="/excluirfront?id={{ p.id }}" class="excluir btn">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

@@ -61,20 +61,20 @@ class SquadController:
         s1.nome = s[1]
         s1.descricao= s[2]
         s1.numpessoas = s[3]
-        lista_tuplas_backend = self.backend_dao.listar_todos(s1.id)
+        lista_tuplas_backend = self.backend_dao.buscar_por_squad(s1.id)
         i=0
         for b in range(len(lista_tuplas_backend)):
-            s1.backend.append(b[i])
+            s1.backend.append(lista_tuplas_backend[i])
             i+=1
-        lista_tuplas_frontend = self.frontend_dao.listar_todos(s1.id)
+        lista_tuplas_frontend = self.frontend_dao.buscar_por_squad(s1.id)
         i=0
         for f in range(len(lista_tuplas_frontend)):
-            s1.frontend.append(b[i])
+            s1.frontend.append(lista_tuplas_frontend[i])
             i+=1
-        lista_tuplas_sgbd = self.sgbd_dao.listar_todos(s1.id)
+        lista_tuplas_sgbd = self.sgbd_dao.buscar_por_squad(s1.id)
         i=0
         for sg in range(len(lista_tuplas_sgbd)):
-            s1.sgbd.append(sg[1])
+            s1.sgbd.append(lista_tuplas_sgbd[i])
             i+=1
         return s1
 

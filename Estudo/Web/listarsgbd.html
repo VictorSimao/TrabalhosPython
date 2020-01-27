@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{titulo_app}} - Listar</title>
-    <link rel="stylesheet" href="../static/listar.css">
+    <link rel="stylesheet" href="../static/estilo.css">
 </head>
-<body> 
+<body>
     <div class="conteudo">
-        <a class='cadastro' href="/cadastrar">Cadastrar</a>
-        <table id='tabela-squads'>
+        <a class='btn-cadastro' href="/cadastrar">Cadastrar</a>
+        <table id='tabela-pessoa'>
             <thead>
-                <tr> 
+                <tr>
                     <th>SquadId</th>
                     <th>Nome</th>
                     <th>Descrição</th>
-                    <th>Numero de Pessoas</th>
-                    <th>Linguagem Backend</th>
-                    <th>Framework Frontend</th>
+                    <th>Numero Pessoas</th>
+                    <th>Linguagem</th>
+                    <th>Framework</th>
                     <th></th>
                 </tr>
             </thead>
@@ -28,12 +28,12 @@
                     <td>{{ p.id }}</td>
                     <td>{{ p.nome }}</td>
                     <td>{{ p.descricao }}</td>
-                    <td>{{ p.numpessoas }}</td>
-                    <td>{{ p.backend}}</td>
-                    <td>{{ p.frontend}}</td>
+                    <td>{{ p.numeropessoas }}</td>
+                    <td>{{ p.backend }}</td>
+                    <td>{{ p.frontend }}</td>
                     <td>
-                        <a href="/cadastrar?id={{ p.id }}" class="editar btn">Editar</a>
-                        <a href="/excluir?id={{ p.id }}" class="excluir btn">Excluir</a>
+                        <a href="/cadastrar?idsquad={{ p.id }}" class="editar">Editar</a>
+                        <a href="/excluir?idsquad={{ p.id }}" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

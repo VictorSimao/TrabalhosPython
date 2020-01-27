@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="conteudo">
-        <form action="/salvarfront" method="get">
-            <input type="hidden" name="id" id="id" value="{{front.id}}"> <br/>
+        <form action="/salvarsgbd" method="get">
+            <input type="hidden" name="id" id="id" value="{{sgbd.id}}"> <br/>
             <div class="descricoes"> 
                 <label for="nome">Nome:</label>
             </div>
-            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{front.nome}}"> <br/>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{sgbd.nome}}"> <br/>
             <div class="descricoes"> 
                 <label for="versao">Versão:</label>
             </div>
-            <input type="text" name="versao" id="versao" value="{{front.versao}}"> <br/>
+            <input type="text" name="versao" id="versao" value="{{sgbd.versao}}"> <br/>
 
             <hr/>
             <input type="submit" value="Salvar" class="salvar">
-            <a href="/cadastrarfront" class="limpar btn">Limpar</a>
+            <a href="/cadastrarsgbd" class="limpar btn">Limpar</a>
         </form>
     </div>
 </body>

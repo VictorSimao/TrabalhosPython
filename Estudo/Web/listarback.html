@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{titulo_app}} - Listar</title>
-    <link rel="stylesheet" href="../static/listar.css">
+    <link rel="stylesheet" href="../static/estilo.css">
 </head>
-<body> 
+<body>
     <div class="conteudo">
-        <a class='cadastro' href="/cadastrarback">Cadastrar</a>
-        <table id='tabela-back'>
+        <a class='btn-cadastro' href="/cadastrarback">Cadastrar</a>
+        <table id='tabela-pessoa'>
             <thead>
-                <tr> 
-                    <th>BackId</th>
+                <tr>
+                    <th>Back Id</th>
                     <th>Nome</th>
                     <th>Versão</th>
                     <th></th>
@@ -26,8 +26,8 @@
                     <td>{{ p.nome }}</td>
                     <td>{{ p.versao }}</td>
                     <td>
-                        <a href="/cadastrarback?id={{ p.id }}" class="editar btn">Editar</a>
-                        <a href="/excluirback?id={{ p.id }}" class="excluir btn">Excluir</a>
+                        <a href="/cadastrarback?id={{ p.id }}" class="editar">Editar</a>
+                        <a href="/excluirback?id={{ p.id }}" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

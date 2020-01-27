@@ -1,0 +1,71 @@
+body{
+    background: #ffffff;
+    color: #e850aa;
+}
+#tabela-squads{
+    width: 95%;
+    margin: 3em auto 2em;
+    border-collapse: collapse;
+    border-radius: 1em;
+    background: #ffffff;
+    border-radius: 1em;
+}
+#tabela-squads thead tr th{
+    background: #d1d2da;
+    padding: 0.8em;
+    text-align: left;
+    color: #e850aa;
+}
+#tabela-squads tbody tr td{
+    padding: 0.3em;
+    color:#3a4161;
+    background: #ffffff;
+}
+.cadastro{
+    color:#3a4161;
+    background: #e850aa;
+    margin: 2.2 em ;
+    padding: 10px;
+    text-decoration: none;
+}
+.cadastro:hover{
+    color:#ffffff;
+    background: #e850aa;
+    border: 1px solid #3a4161;
+}
+.editar{
+    color:#e850aa;
+    background: #d1d2da;
+    border: 1px solid #3a4161;
+}
+.editar:hover{
+    color:#ffffff;
+    background: #e850aa;
+    border: 1px solid #3a4161;
+}
+.excluir{
+    color:#e850aa;
+    background: #d1d2da;
+    border: 1px solid #3a4161;
+}
+.excluir:hover{
+    color:#ffffff;
+    background: #e850aa;
+    border: 1px solid #3a4161;
+}
+.btn{
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center; 
+    box-sizing: border-box;
+}
+.conteudo{
+    width: 80%;
+    margin:80px auto;
+}

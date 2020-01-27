@@ -19,7 +19,7 @@ class FrontEndDao:
         return resultado
 
     def buscar_por_squad(self, id):
-        comando = f"SELECT F.NOME FROM FRONTEND AS F RIGHT JOIN RELACIONAMENTO AS R ON F.ID = R.BACK_ID RIGHT JOIN SQUADS AS S ON R.SQUAD_ID = S.ID WHERE S.ID = {id}"
+        comando = f"SELECT F.NOME FROM FRONTEND AS F RIGHT JOIN RELACIONAMENTO AS R ON F.ID = R.FRONT_ID RIGHT JOIN SQUADS AS S ON R.SQUAD_ID = S.ID WHERE S.ID = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado

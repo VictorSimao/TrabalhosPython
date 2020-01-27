@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{titulo_app}} - Listar SGBD</title>
-    <link rel="stylesheet" href="../static/estilo.css">
+    <title>{{titulo_app}} - Listar</title>
+    <link rel="stylesheet" href="../static/listar.css">
 </head>
-<body>
+<body> 
     <div class="conteudo">
-        <a class='btn-cadastro' href="/cadastrarsgbd">Cadastrar</a>
-        <table id='tabela-pessoa'>
+        <a class='cadastro' href="/cadastrarsgbd">Cadastrar</a>
+        <table id='tabela-sgbds'>
             <thead>
-                <tr>
-                    <th>SGBD Id</th>
+                <tr> 
+                    <th>SGBDsId</th>
                     <th>Nome</th>
                     <th>Versão</th>
                     <th></th>
@@ -26,8 +26,8 @@
                     <td>{{ p.nome }}</td>
                     <td>{{ p.versao }}</td>
                     <td>
-                        <a href="/cadastrarsgbd?id={{ p.id }}" class="editar">Editar</a>
-                        <a href="/excluirsgbd?id={{ p.id}}" class="excluir">Excluir</a>
+                        <a href="/cadastrarsgbd?id={{ p.id }}" class="editar btn">Editar</a>
+                        <a href="/excluirsgbd?id={{ p.id }}" class="excluir btn">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}
