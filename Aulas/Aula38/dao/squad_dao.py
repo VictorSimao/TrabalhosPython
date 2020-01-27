@@ -1,4 +1,6 @@
-#----- Importar biblioteca do Mysql
+import sys
+sys.path.append('Aula/Aula38')
+
 import MySQLdb
 from model.squad import Squad
 
@@ -27,17 +29,17 @@ class SquadDao:
         id_inserido = self.cursor.lastrowid
         squad.id = id_inserido
         for x in range(len(squad.backend)):
-            if squad.backend[x] != None:
+            if squad.backend[x] != 'None':
                 comando1 = f"INSERT INTO RELACIONAMENTO (SQUAD_ID,BACK_ID)VALUES({squad.id},{squad.backend[x]})"
                 self.cursor.execute(comando1)
                 self.conexao.commit()
         for x in range(len(squad.frontend)):
-            if squad.frontend[x] != None:
+            if squad.frontend[x] != 'None':
                 comando2 = f"INSERT INTO RELACIONAMENTO (SQUAD_ID,FRONT_ID)VALUES({squad.id},{squad.frontend[x]})"
                 self.cursor.execute(comando2)
                 self.conexao.commit()
         for x in range(len(squad.sgbd)):
-            if squad.sgbd[x] != None:
+            if squad.sgbd[x] != 'None':
                 comando3 = f"INSERT INTO RELACIONAMENTO (SQUAD_ID,SGBD_ID)VALUES({squad.id},{squad.sgbd[x]})"
                 self.cursor.execute(comando3)
                 self.conexao.commit()
@@ -50,6 +52,8 @@ class SquadDao:
         comando4 = f"DELETE FROM RELACIONAMENTO WHERE SQUAD_ID = {squad.id}"
         self.cursor.execute(comando4)
         self.conexao.commit()
+        print(len(squad.backend))
+        print(squad.backend)
         for x in range(len(squad.backend)):
             if squad.backend[x] != None:
                 comando1 = f"INSERT INTO RELACIONAMENTO (SQUAD_ID,BACK_ID)VALUES({squad.id},{squad.backend[x]})"

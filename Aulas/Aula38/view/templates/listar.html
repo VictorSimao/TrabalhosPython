@@ -9,6 +9,7 @@
 </head>
 <body> 
     <div class="conteudo">
+        <a class='menu' href="/">Inicio</a>
         <a class='cadastro' href="/cadastrar">Cadastrar</a>
         <table id='tabela-squads'>
             <thead>
@@ -19,6 +20,7 @@
                     <th>Numero de Pessoas</th>
                     <th>Linguagem Backend</th>
                     <th>Framework Frontend</th>
+                    <th>SGBD</th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,6 +33,7 @@
                     <td>{{ p.numpessoas }}</td>
                     <td>{{ p.backend}}</td>
                     <td>{{ p.frontend}}</td>
+                    <td>{{ p.sgbd }}</td>
                     <td>
                         <a href="/cadastrar?id={{ p.id }}" class="editar btn">Editar</a>
                         <a href="/excluir?id={{ p.id }}" class="excluir btn">Excluir</a>

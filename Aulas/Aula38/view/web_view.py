@@ -26,6 +26,7 @@ def inicio():
 
 @app.route('/listar')
 def listar():
+    squad_controller = SquadController()
     squads = squad_controller.listar_todos()
     return render_template('listar.html', titulo_app = nome, lista = squads)
 
@@ -33,10 +34,13 @@ def listar():
 @app.route('/cadastrar')
 def cadastrar():
     squad = Squad()
+    backends = backend_controller.listar_todos()
+    frontends = frontend_controller.listar_todos()
+    sgbds = sgbd_controller.listar_todos()
     if 'id' in request.args:
         id = request.args['id']
         squad = squad_controller.buscar_por_id(id)
-    return render_template('cadastrar.html', titulo_app = nome, squad = squad )
+    return render_template('cadastrar.html', titulo_app = nome, squad = squad, lista_back = backends, lista_front = frontends, lista_sgbd = sgbds )
 
 @app.route('/salvar')
 def salvar():
@@ -45,9 +49,15 @@ def salvar():
     squad.nome = request.args['nome']
     squad.descricao = request.args['descricao']
     squad.numpessoas = request.args['numpessoas']
-    # squad.backend = request.args['backend']
-    # squad.frontend = request.args['frontend']
-    
+    backend = request.args['backend0']
+    backend1 = request.args['backend1']
+    if backend != '':
+        squad.backend.append(backend)
+    if backend1 != '':
+        squad.backend.append(backend1)
+    squad.frontend.append(request.args['frontend0'])
+    squad.frontend.append(request.args['frontend1'])
+    squad.sgbd.append(request.args['sgbd'])
 
     if squad.id == 0:
         squad_controller.salvar(squad)
@@ -157,4 +167,4 @@ def excluirsgbd():
     sgbd_controller.deletar(id)
     return redirect('/listarsgbds')
 
-app.run(debug=True)
+app.run()

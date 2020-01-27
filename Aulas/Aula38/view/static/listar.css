@@ -2,24 +2,40 @@ body{
     background: #ffffff;
     color: #e850aa;
 }
+.menu{
+    color:#3a4161;
+    background: #e850aa;
+    margin: 2.2 em ;
+    padding: 10px;
+    text-decoration: none;
+}
+.menu:hover{
+    color:#ffffff;
+    background: #e850aa;
+    border: 2px solid #3a4161;
+}
 #tabela-squads{
     width: 95%;
     margin: 3em auto 2em;
+    border: 1px solid #3a4161;
     border-collapse: collapse;
-    border-radius: 1em;
+    border-radius: 3em;
     background: #ffffff;
-    border-radius: 1em;
+    text-align: center;
 }
 #tabela-squads thead tr th{
     background: #d1d2da;
     padding: 0.8em;
     text-align: left;
     color: #e850aa;
+    text-align: center;
+    border: 1px solid #3a4161;
 }
 #tabela-squads tbody tr td{
     padding: 0.3em;
     color:#3a4161;
     background: #ffffff;
+    border: 1px solid #3a4161;
 }
 .cadastro{
     color:#3a4161;
