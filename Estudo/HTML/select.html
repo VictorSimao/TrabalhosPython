@@ -1,0 +1,8 @@
+<div class="descricoes"> 
+    <label for="backend0">Linguagem Backend - 1:</label>
+</div>
+<select name="backend0" id="backend0">
+    {% for b in lista_back %}
+    <option value="{{ b.id }}">{{ b.id }} - {{ b.nome }} </option>
+    {% endfor %}<br>
+</select>
