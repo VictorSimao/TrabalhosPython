@@ -6,3 +6,24 @@
     <option value="{{ b.id }}">{{ b.id }} - {{ b.nome }} </option>
     {% endfor %}<br>
 </select>
+
+<div class="descricoes"> 
+    <label for="backend0">Linguagem Backend - 1:</label>
+</div>
+<input type="text" name="backend0" id="backend0" value="{{squad.backend0}}"> <br/>
+
+<tr>
+    Código Back-End:
+    {% for b in lista_back %}
+    <td>{{ b.id }}-{{ b.nome }} </td>
+    {% endfor %}<br>
+    Código Front-End:
+    {% for f in lista_front %}
+    <td>{{ f.id }}-{{ f.nome }} </td>
+    {% endfor %}<br>
+    Código SGBD:
+    {% for sg in lista_sgbd %}
+    <td>{{ sg.id }}-{{ sg.nome }} </td>
+    {% endfor %}<br>         
+
+</tr>

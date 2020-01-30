@@ -173,4 +173,4 @@ def excluirsgbd():
     sgbd_controller.deletar(id)
     return redirect('/listarsgbds')
 
-app.run()
+app.run(debug=True)

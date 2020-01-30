@@ -68,3 +68,9 @@ input[type='text']{
 input[type='text'] , .descricoes{
     display: inline-block;
 }
+select{
+    padding: 1em 1.5em;
+    width: 60%;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}

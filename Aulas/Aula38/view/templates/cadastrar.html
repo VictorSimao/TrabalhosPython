@@ -26,38 +26,49 @@
             <div class="descricoes"> 
                 <label for="backend0">Linguagem Backend - 1:</label>
             </div>
-            <input type="text" name="backend0" id="backend0" value="{{squad.backend0}}"> <br/>
+            <select name="backend0" id="backend0">
+                <option></option>
+                {% for b in lista_back %}
+                <option value="{{ squad.backend0 }}">{{ b.id }} - {{ b.nome }} </option>
+                {% endfor %}<br>
+            </select>
             <div class="descricoes"> 
                 <label for="backend1">Linguagem Backend - 2:</label>
             </div>
-            <input type="text" name="backend1" id="backend1" value="{{squad.backend1}}"> <br/>
+            <select name="backend1" id="backend1">
+                <option></option>
+                {% for b in lista_back %}
+                <option value="{{ b.id }}">{{ b.id }} - {{ b.nome }} </option>
+                {% endfor %}<br>
+            </select>
             <div class="descricoes"> 
                 <label for="frontend0">Framework Frontend - 1:</label>
             </div>
-            <input type="text" name="frontend0" id="frontend0" value="{{squad.frontend0}}"> <br/>
+            <select name="frontend0" id="frontend0">
+                <option></option>
+                {% for f in lista_front %}
+                <option value="{{ f.id }}">{{ f.id }} - {{ f.nome }} </option>
+                {% endfor %}<br>
+            </select>
             <div class="descricoes"> 
                 <label for="frontend1">Framework Frontend - 2:</label>
             </div>
-            <input type="text" name="frontend1" id="frontend1" value="{{squad.frontend1}}"> <br/>
+            <select name="frontend1" id="frontend1">
+                <option></option>
+                {% for f in lista_front %}
+                <option value="{{ f.id }}">{{ f.id }} - {{ f.nome }} </option>
+                {% endfor %}<br>
+            </select>
             <div class="descricoes"> 
-                    <label for="sgbd">SGBD:</label>
-                </div>
-                <input type="text" name="sgbd" id="sgbd"> <br/>
-            <tr>
-            Código Back-End:
-            {% for b in lista_back %}
-            <td>{{ b.id }}-{{ b.nome }} </td>
-            {% endfor %}<br>
-            Código Front-End:
-            {% for f in lista_front %}
-            <td>{{ f.id }}-{{ f.nome }} </td>
-            {% endfor %}<br>
-            Código SGBD:
-            {% for sg in lista_sgbd %}
-            <td>{{ sg.id }}-{{ sg.nome }} </td>
-            {% endfor %}<br>         
+                <label for="sgbd">SGBD:</label>
+            </div>
+            <select name="sgbd" id="sgbd">
+                <option></option>
+                {% for sg in lista_sgbd %}
+                <option value="{{ sg.id }}">{{ sg.id }} - {{ sg.nome }} </option>
+                {% endfor %}<br>
+            </select>
 
-            </tr>
             <hr/>
             <input type="submit" value="Salvar" class="salvar">
             <a href="/cadastrar" class="limpar btn">Limpar</a>
