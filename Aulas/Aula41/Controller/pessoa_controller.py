@@ -6,19 +6,18 @@ class PessoaController(Resource):
     def __init__(self):
         self.dao = PessoaDao()
 
-    def get(self):
-        msg = self.dao.list_all()
+    def get(self, id=None):
+        if id:
+            return self.dao.get_by_id(id)
+        return self.dao.list_all()
+
+    def post(self):
+        msg = self.dao.insert('')
         return msg
 
     def put(self):
         msg = self.dao.update('')
         return msg
 
-    def delete(self):
-        msg = self.dao.delete(10)
-        return msg
-
-    def post(self):
-        msg = self.dao.insert('')
-        return msg
-
+    def delete(self, id):
+        return self.dao.remove(id)
