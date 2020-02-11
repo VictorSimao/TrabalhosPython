@@ -1,6 +1,5 @@
 import sqlalchemy as db
 
-from sqlalchemy.orm import session
 from sqlalchemy.orm.session import sessionmaker
 
 class BaseDao:
@@ -9,15 +8,13 @@ class BaseDao:
         engine = db.create_engine("mysql+mysqlconnector://topskills01:ts2019@mysql.topskills.dev:3306/topskills01")
         session_mk = sessionmaker()
         session_mk.configure(bind=engine)
-        self.session = session_mk
+        self.session = session_mk()
 
     def list_all(self):
-        list_model = self.session.query(self.table).all()
-        return list_model
+        return [obj.json() for obj in self.session.query(self.table).all()]
 
     def get_by_id(self, id):
-        model = self.session.query(self.table).filter_by(id=id).one()
-        return model
+        return self.session.query(self.table).filter_by(id=id).one()
 
     def insert(self, model):
         self.session.add(model)
