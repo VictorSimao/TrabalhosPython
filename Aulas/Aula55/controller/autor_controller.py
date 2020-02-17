@@ -8,8 +8,6 @@ class AutorController(BaseController):
         dao = AutorDao()
         super().__init__(dao)
 
-
-
     def post(self):
         return super().post(self.carrega_parametros())
 
