@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 
-from Aulas.Aula59.controller.base_controller import BaseController
+from Aulas.Aula58.controller.base_controller import BaseController
 
 app = Flask(__name__)
 api = Api(app)
