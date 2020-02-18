@@ -13,11 +13,12 @@ class Autor(Base):
     pessoa_id = db.Column(db.Integer, db.ForeignKey('LIVRARIA_PESSOA.id'))
     pessoa = relationship(Pessoa)
 
-    def __init__(self, pseudonimo, descricao, pessoa_id, p, id=None):
+    def __init__(self, pseudonimo, descricao, pessoa_id, pessoa, id=None):
         self.id = id
         self.pseudonimo = pseudonimo
         self.descricao = descricao
         self.pessoa_id = pessoa_id
+        self.pessoa = pessoa
 
     def json(self):
         return {
