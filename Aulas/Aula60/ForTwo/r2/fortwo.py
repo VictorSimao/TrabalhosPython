@@ -16,9 +16,7 @@ class Fortwo:
 
     def set_passageiro(self, pessoa):
        if self.__valida_regra_passageiro__(pessoa):
-            self.__passageiro = pessoa
-            return True
-       elif pessoa == '':
+           self.__passageiro = pessoa
            return True
        return False
 
@@ -27,7 +25,7 @@ class Fortwo:
 
     def __valida_regra_passageiro__(self, pessoa) -> bool:
         if self.__motorista == 'policial':
-            if pessoa == 'presidiário':
+            if pessoa == 'presidiário' or pessoa == '':
                 return True
         elif self.__motorista == 'piloto':
             if pessoa != 'comissário1' and pessoa != 'comissário2' and pessoa != 'presidiário':
@@ -37,15 +35,13 @@ class Fortwo:
                 return True
         return False
 
-    def viagem(self, origem:Local, destino:Local):
+    def viagem(self, origem:Local, destino):
         print(f"Saindo do {origem}")
         print('Iniciando a viagem...')
         print(f'motorista: {self.__motorista} passageiro: {self.__passageiro}')
         print(f"Chegando no {destino}")
         print('Finalizando a viagem ...')
         print(f'{self.__motorista} e {self.__passageiro} descem no {destino}')
-        # print(f'origem: {origem.get_pessoas()}')
-        # print(f'destino: {destinoino.get_pessoas()}')
 
 
 

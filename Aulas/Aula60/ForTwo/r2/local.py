@@ -19,11 +19,11 @@ class Local:
             return True
         return False
 
-    # valida saída de alguma pessoa do local
+    # valida saída de alguma pessoa do terminal
     def valida_saida(self, pessoa: str):
 
         if pessoa in self.__pessoas:
-            if pessoa == 'policial' and 'presidiário' in self.__pessoas and len(self.__pessoas) > 3:
+            if pessoa == 'policial' and 'presidiário' in self.__pessoas and len(self.__pessoas) > 2:
                 return False
             if len(self.__pessoas) <= 4:
                 # chefe de serviço - oficiais

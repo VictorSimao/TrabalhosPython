@@ -1,6 +1,7 @@
 from Air import airlines
 from time import sleep
 from termcolor import colored
+
 air = airlines()
 
 terminal = air.abrir()
