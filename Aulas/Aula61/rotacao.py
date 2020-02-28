@@ -1,13 +1,14 @@
 
 
-def rotacao(a:list, k:int):
-    for i in range(k):
-        lista_copia = a.copy()
-        for i in range(len(a)-1):
-            lista_copia[i+1] = a[i]
-        lista_copia[0] = a[-1]
-        a = lista_copia
-    return a
+def rotacao(A:list, K:int):
+    for i in range(K):
+        if A:
+            lista_copia = A.copy()
+            for i in range(len(A)-1):
+                lista_copia[i + 1] = A[i]
+            lista_copia[0] = A[-1]
+            A = lista_copia
+    return A
 
 
 A = [3, 8, 9, 7, 6]
@@ -21,4 +22,8 @@ assert rotacao(A, K) == [9, 7, 6, 3, 8]
 A = [1, 2, 3, 4]
 K = 4
 assert rotacao(A, K) == [1, 2, 3, 4]
+
+A = []
+K = 1
+assert rotacao(A, K) == []
 
