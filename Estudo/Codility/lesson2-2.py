@@ -12,8 +12,7 @@
 def solution(A):
     A.sort()
     if len(A) == 1:
-        numero = A[0]
-        return numero
+        return A[0]
     for i in range(0,len(A),2):
         if i == len(A) - 1:
             return A[i]

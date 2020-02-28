@@ -1,4 +1,7 @@
-numero = 100
+
+
+
+numero = 1041
 numero = bin(numero)
 numero = numero[2:]
 numero = str(numero)
