@@ -1,6 +1,5 @@
 
 def solution(A):
-    print(max(A))
     if max(A) < 1:
         return 1
 
@@ -10,5 +9,9 @@ def solution(A):
 
 
 A = [1, 3, 6, 4, 1, 2]
+
+print(solution(A))
+
+A = [1,2,3]
 
 print(solution(A))
